@@ -1,23 +1,19 @@
 const express = require("express");
 const router = express.Router();
-const { getusers }=require('../controllers/users');
+const { getusers, getUsersById, add, deleteuser }=require('../controllers/users');
 
 router.get("/list",getusers);
 
-router.get("/list/:id",function(req,res){
-    return res.status(200).json({message:`${req.params.id}`});
+router.get("/list/:id",getUsersById, function(req,res){
+    return res.status(200).json(res.userdata);
 });
 
-router.post("/add",function(req,res){
-    return res.status(200).json({message:"hi"});
-});
+router.post("/add", add);
 
 router.patch("/update/:id",function(req,res){
     return res.status(200).json({message:"hi"});
 });
 
-router.delete("/delete/:id",function(req,res){
-    return res.status(200).json({message:"hi"});
-});
+router.delete("/delete/:id", getUsersById, deleteuser);
 
 module.exports=router;
