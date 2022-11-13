@@ -1,11 +1,19 @@
 ###
-POST https://8000-arunk555-nodeapi-nsds6dtnwah.ws-us74.gitpod.io/user/add
+POST https://8000-arunk555-nodeapi-nsds6dtnwah.ws-us75.gitpod.io/user/add
 Content-Type: application/json
 
 {
-    "name":"TEst Test",
-    "email":"test@test.com"
+    "name":"Arun Test",
+    "email":"test1@test.com"
 }
 
 ###
 DELETE  https://8000-arunk555-nodeapi-nsds6dtnwah.ws-us74.gitpod.io/user/delete/636f9c960f4bcd3c7e2829cf
+
+###
+PATCH https://8000-arunk555-nodeapi-nsds6dtnwah.ws-us75.gitpod.io/user/update/636f9cf90f4bcd3c7e2829d2
+Content-Type: application/json
+
+{
+    "name":"Test Arun"
+}

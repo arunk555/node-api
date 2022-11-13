@@ -62,6 +62,33 @@ const add = async (req,res)=>{
  }
 };
 
+const updateuser= async (req, res)=>{
+  if(req.body.name){
+    res.userdata.name=req.body.name;
+  }
+
+  if(req.body.email){
+    res.userdata.name=req.body.email;
+  }
+  if(req.body.hasOwnProperty('age')){
+    res.userdata.age=req.body.age;
+  }
+
+  try {
+    const uptuser=await res.userdata.save();
+    return res.status(201).json(uptuser);
+  } catch (error) {
+    return res.status(400).json({
+      success: "false",
+      error: {
+        statusCode: 400,
+        message: error.message,
+      },
+    });
+  }
+
+};
+
 const deleteuser = async (req,res)=>{
   try {
     console.log(res.userdata);
@@ -79,4 +106,4 @@ const deleteuser = async (req,res)=>{
 
 };
 
-module.exports={ getusers, getUsersById, add, deleteuser };
+module.exports={ getusers, getUsersById, add, updateuser, deleteuser };
