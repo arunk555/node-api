@@ -2,14 +2,14 @@ const { Schema, model}=require("mongoose");
 const customerSchema=new Schema({
     name:{
         type:String,
-        require: true,
+        required: true,
         default: null
     },
     email:{
         type: String,
         unique: true,
         default: null,
-        require: true
+        required: true
     },
     age:{
        type: Number,
